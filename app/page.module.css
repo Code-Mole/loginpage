@@ -1,0 +1,131 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,600;0,700;1,300&family=Roboto+Slab:wght@100..900&display=swap');
+
+.homeContainer {
+    position: absolute;
+    top: 10%;
+    margin: 6vh 120px;
+    height: 100vh;
+}
+.title{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+.spanText{
+    color: #0099ff;
+    text-decoration: underline yellow 0.7px;
+}
+.pic{
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10vh;
+}
+.profilepic{
+    width: 50vw;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 5px 10px 10px 20px rgba(6, 6, 6, 0.75);
+    /* background-color: rgb(255, 255, 255); */
+}
+.horizontalLine{
+    margin: 0 15%;
+    border-left: yellow 0.7px solid;
+    height: 100%;
+}
+.loginsButton{
+    width: 70%;
+    margin: 10% auto;
+}
+.loginsButton a{
+    text-decoration: none;
+    color: yellow;
+    padding: 5px;
+    text-align: center;
+}
+.loginsButton a:hover{
+    color: #f7f2f2;
+    cursor: pointer;
+    transform: scale(1.5);
+    transition: all 0.3s ease 0s;
+    border: 2px solid yellow;
+    border-radius: 6px;
+    background-color: transparent;
+}
+#imgs{
+    width: 35rem;
+    height: 15rem;
+    border-radius: 10px;
+}
+#btn{
+    padding: 15px ;
+    margin: 7% auto;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    background-color: rgb(28, 23, 81);
+    border: none;
+    border-radius: 6px;
+    width: 30%;
+    color: #9e9b9b;
+    position: relative;
+    top: 10px;
+    left: 35%;
+}
+#btn a{
+    text-decoration: none;
+    color: #9e9b9b;
+    padding: 5px;
+    text-align: center;
+    font-size: 16px;
+}
+#btn:hover{
+    transition: 0.5s all ease-in-out ;
+    color: #f7f2f2;
+    cursor: pointer;
+    transform: scale(1.5);
+    border: 2px solid yellow;
+    border-radius: 6px;
+    background-color: rgb(20, 16, 57);
+}
+#btn a:hover{
+    transition: 0.5s all ease-in-out ;
+    color: yellow;
+}
+
+    /*    ----------SMALLER SCREENS---------- */
+    @media only screen and (max-width: 768px){
+    .pic{
+        flex-direction: column;
+    }
+    .horizontalLine{
+        border-bottom: yellow 0.7px solid;
+        position: relative;
+        top: 30%;
+        right: 10%;
+        width: 110%;
+
+    }
+    .pageText{
+        position: relative;
+        top: 45%;
+        left: 25%;
+        width: 70%;
+    }
+    .profilepic{
+        width: 40vw;
+        height: 100%;
+    }
+    #imgs{
+        width: 20rem;
+        height: 15rem;
+        border-radius: 10px;
+    }
+    #btn{
+        position: relative;
+        top:  35vh;
+        left: 35%;
+        width: 50%;
+    }
+       
+     }

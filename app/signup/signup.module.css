@@ -1,0 +1,109 @@
+.signupContainer {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(244, 239, 248);
+    text-align: center;
+}
+#title{
+    font-size: 50px;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    padding: 15px 0;
+    color:#000 ;
+
+}
+.para{
+    margin-bottom: 5%;
+    border-bottom: #000 1px solid;
+    color: #000;
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+}
+.signupform{
+    margin: 5%;
+    position: relative;
+    right: 5%;
+}
+.namefield{
+    display: flex;
+    /* margin-left: 5%; */
+}
+.signupSubform{
+    display: flex;
+    flex-direction: column;
+}
+.inputField{
+    margin-left: 11%;
+    margin-bottom: 5%;
+    padding: 5px;
+}
+.condition{
+    display: flex;
+    position: relative;
+    left: 10%;
+    align-items: center;
+
+}
+.para1{
+    margin: 4% 4% 4% 2%;
+    color: #000;
+}
+.agreementText{
+    color: blue;
+}
+.agreementText:hover{
+    cursor: pointer;
+}
+.signupbtn{
+    padding: 7px 30px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    background-color: rgb(28, 23, 81);
+    border: none;
+    width: 70%;
+    color: #9e9b9b;
+    align-items: center;
+    justify-content: center;
+    margin-left: 7%;
+}
+.signupbtn:hover{
+    background-color: rgb(20, 16, 57);
+    transition: 0.5s all ease-in-out ;
+    color: yellow;
+}
+#createStyle{
+    color: #767a02;
+    font-size: 15px;
+    padding: 10px; 
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: italic;
+    text-decoration: none;
+}
+#createStyle:hover{
+    color: rgb(68, 0, 255);
+    transition: 0.5s all ease-in-out ;
+}
+.inputErr{
+    
+}
+
+
+/*     SMALLER SCREENS */
+@media(max-width:700px ){
+    .namefield{
+        flex-direction: column;
+    }
+}
+
+@media(max-width : 1300px){
+      .namefield{
+        flex-direction: column;
+      }
+}

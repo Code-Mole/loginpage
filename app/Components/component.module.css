@@ -1,0 +1,74 @@
+.NavContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+
+}
+.Navigations{
+    background-color: #333;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: #d5f121 3px solid;
+    width: 100vw;
+}
+.NavLogo{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+  font-family: "Roboto Slab", serif;
+}
+.NavLogo:hover{
+    cursor: pointer;
+}
+.NavLinks{
+    list-style: none;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+    color: #fff;
+}
+#link{
+    text-decoration: none;
+    color: #d5f121;
+    padding: 10px;
+    font-size: 20px;
+}
+#link:hover{
+    color: #767171;
+    cursor: pointer;
+    transform: scale(1.5);
+    transition: all 0.3s ease 0s;
+}
+#link:active{
+    color: brown;
+}
+#link::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #d5f121;
+    transition: width 0.3s ease 0s;
+}
+
+
+
+
+/* ------------SMALLER SCREENS------------- */
+@media only screen and (max-width: 600px) {
+    .NavLogo{
+        font-size: 15px;
+        padding: 10px;
+      
+    }
+    .NavContainer{
+        position: sticky;
+    }
+   
+}
+
+
+
