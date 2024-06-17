@@ -2,20 +2,19 @@
 import React, { useState } from "react";
 import styles from "./login.module.css";
 import axios from "axios";
-
-const registerUser = async (data) => {
-  await axios.post("http://localhost:5030/api/users/post", data);
-};
+import { useRouter } from "next/navigation";
 
 function Login() {
   const [errMsg, seterrMsg] = useState();
-  const [username, setusername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setpassword] = useState("");
 
   const data = {
-    username,
+    email,
     password,
   };
+
+  const router = useRouter();
 
   //  const loginbtn = (e)=>{
   //   // e.preventDefault();
@@ -39,21 +38,43 @@ function Login() {
   //          msg.remove();
   //   },3000)
   //  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    await axios
+      .post("http://localhost:5030/api/users/login", data)
+      .then((res) => {
+        console.log(res.data);
+        router.push("/");
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+
+    setEmail("");
+    setpassword("");
+  };
 
   return (
     <div className={styles.loginContainer}>
       <h1 className={styles.loginTitle}>Admin Login</h1>
       <div className={styles.formContainerBig}>
-        <form className={styles.formContainer} action="">
+        <form
+          className={styles.formContainer}
+          action=""
+          onSubmit={handleSubmit}
+        >
           <input
-            onChange={(e) => setusername(e.target.value)}
-            id="name"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            id="email"
             className={styles.inputStyles}
-            type="text"
-            name="userName"
-            placeholder="Username "
+            type="email"
+            name="email"
+            placeholder="email "
           />
           <input
+            value={password}
             onChange={(e) => setpassword(e.target.value)}
             id="password"
             className={styles.inputStyles}
@@ -65,12 +86,7 @@ function Login() {
           <a id={styles.lossPassword} href="/">
             Lost Password?
           </a>
-          <button
-            id="btn"
-            className={styles.buttonStyles}
-            type="submit"
-            onClick={registerUser()}
-          >
+          <button id="btn" className={styles.buttonStyles} type="submit">
             Submit
           </button>
         </form>

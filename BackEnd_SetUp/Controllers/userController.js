@@ -35,4 +35,27 @@ const postUser = async (req, res) => {
   }
 };
 
-export { getUser, postUser };
+const logUserIn = async (req, res) => {
+  // res.send("Log User In is working");
+  try {
+    const { email, password } = req.body;
+    const user = await userModel.findOne({ email: req.body.email });
+    if (!user) {
+      return res.status(400).json({ message: "User does not exist" });
+    }
+    const isPasswordCorrect = await bcrypt.compare(
+      req.body.password,
+      user.password
+    );
+    if (!isPasswordCorrect) {
+      return res.status(400).json({ message: "Password is incorrect" });
+    }
+
+    res.status(200).json({ message: "User logged in", user: user });
+  } catch (err) {
+    console.log(err);
+    res.send("Something went wrong");
+  }
+};
+
+export { getUser, postUser, logUserIn };

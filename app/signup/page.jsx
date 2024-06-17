@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./signup.module.css";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 function Signup() {
   const [firstName, setFirstName] = useState();
@@ -16,6 +17,7 @@ function Signup() {
     email,
     password,
   };
+  const router = useRouter();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,6 +45,7 @@ function Signup() {
       .post("http://localhost:5030/api/users", data)
       .then((res) => {
         setMessage(res.data);
+        router.push("/login");
       })
       .catch((err) => {
         console.log(err);
